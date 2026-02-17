@@ -1,35 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Jerry Vsan</title>
-  <desc id="desc">Comedian aus Köln – Try Out Tour 2026.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#0F0F12" />
-      <stop offset="1" stop-color="#111118" />
-    </linearGradient>
-    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#FF2E2E" />
-      <stop offset="1" stop-color="#B4FF00" />
-    </linearGradient>
-    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
-      <feColorMatrix type="matrix" values="
-        1 0 0 0 0
-        0 1 0 0 0
-        0 0 1 0 0
-        0 0 0 0.12 0" />
-    </filter>
-  </defs>
-
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <rect width="1200" height="630" filter="url(#grain)" opacity="0.55" />
-
-  <rect x="46" y="46" width="1108" height="538" fill="none" stroke="#D9D9D9" stroke-opacity="0.35" stroke-width="4" />
-  <rect x="82" y="86" width="1036" height="458" fill="none" stroke="url(#accent)" stroke-width="6" />
-
-  <text x="120" y="270" fill="#D9D9D9" font-size="132" font-family="Arial Black, Impact, system-ui, sans-serif" letter-spacing="10">JERRY</text>
-  <text x="120" y="390" fill="#D9D9D9" font-size="132" font-family="Arial Black, Impact, system-ui, sans-serif" letter-spacing="10">VSAN</text>
-  <text x="120" y="458" fill="#B4FF00" font-size="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" letter-spacing="6">
-    COMEDIAN AUS KÖLN • TRY OUT TOUR 2026 • NIGHTWASH LIVE
-  </text>
+  <title id="title">Daphni Georgolidis</title>
+  <desc id="desc">Dark humor motion-led website preview.</desc>
+  <rect width="1200" height="630" fill="#FFFFFF" />
+  <rect x="36" y="36" width="1128" height="558" fill="none" stroke="#19E6D4" stroke-width="6" />
+  <rect x="84" y="86" width="1032" height="458" fill="#19E6D4" />
+  <text x="130" y="265" fill="#FFFFFF" font-size="126" font-family="Syne, Arial Black, sans-serif" letter-spacing="8">DAPHNI</text>
+  <text x="130" y="370" fill="#FFE84D" font-size="126" font-family="Syne, Arial Black, sans-serif" letter-spacing="8">GEORGOLIDIS</text>
+  <text x="130" y="455" fill="#FFFFFF" font-size="34" font-family="Manrope, Arial, sans-serif" letter-spacing="5">DARK HUMOR • LIVE • REELS</text>
 </svg>
-

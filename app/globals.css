@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --red: #ff2e2e;
-  --charcoal: #0f0f12;
-  --lime: #b4ff00;
-  --silver: #d9d9d9;
-  --cyan: #00f0ff;
-  --paper: #ffffff;
-  --font-display: "Impact", "Arial Black", "Haettenschweiler", "Franklin Gothic Heavy", ui-sans-serif, system-ui,
-    sans-serif;
-  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --teal: #19e6d4;
+  --yellow: #ffe84d;
+  --white: #ffffff;
+  --font-display: "Arial Black", "Impact", "Haettenschweiler", "Franklin Gothic Heavy", sans-serif;
+  --font-body: "Trebuchet MS", "Arial Narrow", "Avenir Next Condensed", sans-serif;
 }
 
 * {
@@ -29,13 +25,13 @@ html {
 }
 
 body {
-  background: var(--charcoal);
-  color: var(--silver);
+  background: var(--white);
+  color: var(--teal);
 }
 
-/* Hard outline for kinetic type. */
+/* Comic-like ink outline that stays within the 3-color palette (teal/yellow/white). */
 .comic-outline {
-  --comic-stroke: var(--silver);
+  --comic-stroke: var(--teal);
   --comic-stroke-w: 3px;
   --comic-shadow: 1px;
   -webkit-text-stroke: var(--comic-stroke-w) var(--comic-stroke);
@@ -55,12 +51,12 @@ body {
   color: transparent;
 }
 
-.comic-stroke-red {
-  --comic-stroke: var(--red);
+.comic-stroke-teal {
+  --comic-stroke: var(--teal);
 }
 
-.comic-stroke-lime {
-  --comic-stroke: var(--lime);
+.comic-stroke-yellow {
+  --comic-stroke: var(--yellow);
 }
 
 .comic-thin {
@@ -89,19 +85,19 @@ input:focus,
 textarea:focus,
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--lime);
+  outline: 2px solid var(--yellow);
   outline-offset: 2px;
 }
 
 .bg-grid-lines {
-  background-image: linear-gradient(to right, rgba(217, 217, 217, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(217, 217, 217, 0.08) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-image: linear-gradient(to right, var(--teal) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--teal) 1px, transparent 1px);
+  background-size: 44px 44px;
 }
 
 ::selection {
-  background: var(--lime);
-  color: var(--charcoal);
+  background: var(--yellow);
+  color: var(--teal);
 }
 
 @media (prefers-reduced-motion: reduce) {

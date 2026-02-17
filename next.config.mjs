@@ -7,15 +7,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "jerryvsan.com"
+        hostname: "imgproxy.filmmakers.eu"
       },
       {
         protocol: "https",
-        hostname: "i.ytimg.com"
+        hostname: "**.cdninstagram.com"
       },
       {
         protocol: "https",
-        hostname: "www.youtube.com"
+        hostname: "**.fbcdn.net"
       }
     ]
   }

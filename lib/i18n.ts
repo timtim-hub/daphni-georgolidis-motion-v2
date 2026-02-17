@@ -1,313 +1,208 @@
 export type Locale = "de" | "en";
 
-export const siteUrl = "https://jerry-vsan-site.netlify.app";
+export const siteUrl = "https://daphni-georgolidis-comedy.netlify.app";
 
-export const youtube = {
-  featuredId: "-xwzkdixG-8",
-  channelUrl: "https://www.youtube.com/channel/UCS78eYkuXFeg9ai3hdfLTcA"
-};
-
-export const socials = {
-  instagram: "https://www.instagram.com/Jerryvsan/",
-  tiktok: "https://www.tiktok.com/@jerryvsan",
-  youtube: youtube.channelUrl,
-  spotify: "https://open.spotify.com/artist/24U2CZi9ZLpHnn3IxKCqoG",
-  onlyfans: "https://onlyfans.com/jerryvsan"
-} as const;
-
-export type TourStop = {
-  city: string;
-  venue: string;
-  dates: { label: string; isoDate: string }[];
-  ticketUrl: string;
-  soldOut: boolean;
-};
-
-export const tour2026: TourStop[] = [
-  {
-    city: "Berlin",
-    venue: "Downstairs Comedyclub",
-    dates: [
-      { label: "8. Nov. 2026", isoDate: "2026-11-08T19:00:00.000Z" },
-      { label: "10. Nov. 2026", isoDate: "2026-11-10T19:00:00.000Z" }
-    ],
-    ticketUrl: "https://www.downstairscomedy.shop/",
-    soldOut: true
-  },
-  {
-    city: "Hamburg",
-    venue: "Reeperbahn ComedyClub",
-    dates: [
-      { label: "15. Nov. 2026", isoDate: "2026-11-15T19:00:00.000Z" },
-      { label: "16. Nov. 2026", isoDate: "2026-11-16T19:00:00.000Z" }
-    ],
-    ticketUrl: "https://www.reeperbahncomedyclub.de/",
-    soldOut: true
-  },
-  {
-    city: "Köln",
-    venue: "Atelier Theater",
-    dates: [
-      { label: "17. Nov. 2026", isoDate: "2026-11-17T19:00:00.000Z" },
-      { label: "18. Nov. 2026", isoDate: "2026-11-18T19:00:00.000Z" }
-    ],
-    ticketUrl: "https://www.ateliertheater.de/tickets",
-    soldOut: true
-  },
-  {
-    city: "Frankfurt",
-    venue: "Comedy Club Frankfurt",
-    dates: [
-      { label: "25. Nov. 2026", isoDate: "2026-11-25T19:00:00.000Z" },
-      { label: "26. Nov. 2026", isoDate: "2026-11-26T19:00:00.000Z" }
-    ],
-    ticketUrl: "https://www.comedyclubfrankfurt.de/shows",
-    soldOut: true
-  },
-  {
-    city: "München",
-    venue: "Heppel & Ettlich",
-    dates: [
-      { label: "27. Nov. 2026", isoDate: "2026-11-27T19:00:00.000Z" },
-      { label: "28. Nov. 2026", isoDate: "2026-11-28T19:00:00.000Z" }
-    ],
-    ticketUrl: "https://www.heppel-ettlich.de/",
-    soldOut: true
-  }
-];
+export const portraitUrl =
+  "https://imgproxy.filmmakers.eu/0TCR-cp50phRRZcZoVCniSvBjxkIsJkWSU6othubd20/rt:fit/w:3840/h:2160/czM6Ly9maWxtbWFr/ZXJzLWV1LXdlc3Qt/MS9wcm9kdWN0aW9u/LzIwOWUyODE5LWNjODUtNDhkOS05MTE1LTIyZTc1N2QyYjU0Zi5qcGc.avif";
 
 type LocaleCopy = {
+  lang: Locale;
   htmlLang: string;
+  dirLabel: string;
   title: string;
   description: string;
   ogTitle: string;
   ogDescription: string;
   nav: {
     about: string;
-    tour: string;
-    features: string;
     media: string;
-    press: string;
     contact: string;
     languageSwitch: string;
   };
   hero: {
     kicker: string;
-    headline: string[];
+    headlineA: string;
+    headlineB: string;
     intro: string;
-    ctaTickets: string;
-    ctaTour: string;
-    ctaWatch: string;
-    videoLabel: string;
-    videoHint: string;
+    primaryCta: string;
+    secondaryCta: string;
+    reelHint: string;
   };
+  banners: string[];
   about: {
     title: string;
-    body: string[];
-  };
-  tour: {
-    title: string;
-    badge: string;
-    intro: string;
-    soldOut: string;
-    tickets: string;
-  };
-  features: {
-    title: string;
-    intro: string;
-    bullets: string[];
+    textA: string;
+    textB: string;
+    textC: string;
   };
   media: {
     title: string;
     intro: string;
-    watchOnYouTube: string;
-    gridTitle: string;
-  };
-  press: {
-    title: string;
-    intro: string;
-    quotes: { who: string; text: string }[];
-    note: string;
+    filterAll: string;
+    fallback: string;
+    openInstagram: string;
+    playClip: string;
+    reelFallback: string;
+    featured: string;
   };
   contact: {
     title: string;
     intro: string;
-    ctaMail: string;
-    ctaBooking: string;
+    nameLabel: string;
+    emailLabel: string;
+    messageLabel: string;
+    submitLabel: string;
+    legalPlaceholder: string;
   };
   footer: {
-    legal: string;
     rights: string;
+    legal: string;
   };
 };
 
 export const copyByLocale: Record<Locale, LocaleCopy> = {
   de: {
+    lang: "de",
     htmlLang: "de-DE",
-    title: "Jerry Vsan | Comedian aus Köln – Try Out Tour 2026",
+    dirLabel: "DE",
+    title: "Daphni Georgolidis | Dark-Humor-Comedy & Reels",
     description:
-      "Jerry Vsan ist Comedian aus Köln: vom Rapper zur Stand-up-Entdeckung. Try Out Tour 2026, Clips, Lineups und Booking.",
-    ogTitle: "Jerry Vsan | Comedian aus Köln",
+      "Offizielle Seite von Daphni Georgolidis: darke Pointen, Live-Energie, Reels und Booking-Kontakt.",
+    ogTitle: "Daphni Georgolidis | Bühne, Reels, Dark Humor",
     ogDescription:
-      "Street-Energie, high-end Punchlines: Tour 2026 (ausverkauft), NightWash-Clip, Presse & Booking.",
+      "Motion-led Portfolio mit Live-Momenten, ausgewählten Reels und Booking-Bereich für Veranstalter:innen.",
     nav: {
-      about: "Über",
-      tour: "Tour",
-      features: "Lineups",
+      about: "Über Daphni",
       media: "Media",
-      press: "Presse",
       contact: "Kontakt",
       languageSwitch: "EN"
     },
     hero: {
-      kicker: "Comedian aus Köln",
-      headline: ["JERRY", "VSAN"],
+      kicker: "@daphnigg",
+      headlineA: "DARK",
+      headlineB: "HUMOR",
       intro:
-        "Vom Rap zum Stand-up: Jerry bringt den Sound der Straße in eine präzise, high-end Comedy-Show. Schnell, scharf, kontrolliert unberechenbar.",
-      ctaTickets: "Tickets",
-      ctaTour: "Tour ansehen",
-      ctaWatch: "Watch",
-      videoLabel: "Show-Video",
-      videoHint: "Autoplay, ohne Sound"
+        "Daphni Georgolidis spielt die Pointe dorthin, wo es kurz still wird: scharf, selbstironisch und ohne Sicherheitsabstand.",
+      primaryCta: "Featured Reel",
+      secondaryCta: "Zu den Clips",
+      reelHint: "Basierend auf lokal extrahierten Instagram-Inhalten"
     },
+    banners: [
+      "DARK HUMOR",
+      "LIVE",
+      "REELS",
+      "ON TOUR",
+      "UNFILTERED",
+      "CROWD WORK",
+      "SHARP",
+      "DAPHNI"
+    ],
     about: {
-      title: "Köln im Rücken. Weltbühne im Blick.",
-      body: [
-        "Jerry Vsan steht für Stand-up mit Tempo: beobachtet hart, erzählt knapp, trifft sauber.",
-        "Er kommt aus der Musik, aber auf der Bühne ist das Timing das Instrument: Druck, Pause, Punchline.",
-        "Die Haltung ist Köln. Die Produktion ist groß. Und der Vibe bleibt Straße."
-      ]
-    },
-    tour: {
-      title: "Try Out Tour 2026",
-      badge: "November 2026 · 5 Städte · 10 Shows",
-      intro:
-        "Berlin, Hamburg, Köln, Frankfurt, München. Jeder Stopp ein eigenes Kapitel, jede Show ein anderer Puls.",
-      soldOut: "Ausverkauft",
-      tickets: "Zum Ticketshop"
-    },
-    features: {
-      title: "Lineups & Auftritte",
-      intro:
-        "Faktisch, ohne Namedropping-Overkill: Spots, bei denen er auftaucht, abliefert, wieder verschwindet.",
-      bullets: [
-        "NightWash: Stand-up Clip auf YouTube (NightWash club).",
-        "Show- und Club-Lineups in Köln und bundesweit.",
-        "Auszeichnungen/Competitions: u. a. Rebell’s Most Wanted (Gewinner-Hinweis aus Pressekit-Kontext)."
-      ]
+      title: "Mutig im Ton, präzise im Timing.",
+      textA:
+        "Daphni steht für Comedy mit Risiko: klare Beobachtung, trockene Haltung und Punchlines, die nicht nach Erlaubnis fragen.",
+      textB:
+        "Ihr öffentlicher Content zeigt eine deutliche Bühnenenergie: schneller Aufbau, direkter Treffer, kontrollierter Kontrollverlust.",
+      textC:
+        "Diese Seite übersetzt genau das in Interaktion: kinetische Typografie, schiefe Rhythmen und Spannung bis zum nächsten Lacher."
     },
     media: {
-      title: "Media",
+      title: "Instagram-Media",
       intro:
-        "Ein Clip, ein paar Frames, null Ausreden. Wenn du’s fühlst: Tickets sind (leider) weg, aber Booking ist offen.",
-      watchOnYouTube: "Auf YouTube ansehen",
-      gridTitle: "Pressefotos (Auswahl)"
-    },
-    press: {
-      title: "Presse-Stimmen",
-      intro:
-        "Sinngemäß zusammengefasst, damit’s fair bleibt. Die Namen stehen für die Richtung.",
-      quotes: [
-        { who: "Felix Lobrecht", text: "Einer der stabilsten Newcomer im Moment, der Vibe sitzt." },
-        { who: "Rebell Comedy", text: "Ein Kandidat für die Zukunft der deutschen Stand-up-Szene." },
-        { who: "Filiz Tasdan", text: "Timing, das nicht nach Lehrbuch klingt, sondern nach Instinkt." }
-      ],
-      note: "Hinweis: Formulierungen sind paraphrasiert (keine 1:1 Zitate)."
+        "Alle Karten stammen aus dem lokalen Datensatz. Captions sind neu formuliert und werden nicht 1:1 übernommen.",
+      filterAll: "Alle",
+      fallback:
+        "Noch keine Posts lokal verfügbar. Bitte `npm run fetch:instagram` mit Session/Cookies ausführen.",
+      openInstagram: "Auf Instagram öffnen",
+      playClip: "Clip abspielen",
+      reelFallback: "Direkt zum Reel",
+      featured: "Featured Reel"
     },
     contact: {
-      title: "Kontakt",
+      title: "Booking & Kontakt",
       intro:
-        "Booking, Presse, Kooperationen. Kurz sagen, was ihr vorhabt und wann. Der Rest ist Timing.",
-      ctaMail: "Mail schreiben",
-      ctaBooking: "Booking anfragen"
+        "Anfragen von Veranstalter:innen, Redaktionen und Partner:innen. Impressum-Daten folgen separat.",
+      nameLabel: "Name",
+      emailLabel: "E-Mail",
+      messageLabel: "Nachricht",
+      submitLabel: "Anfrage senden",
+      legalPlaceholder: "Impressum-Platzhalter: Rechtsdaten werden ergänzt."
     },
     footer: {
-      legal: "Impressum",
-      rights: "Alle Rechte vorbehalten."
+      rights: "Alle Rechte vorbehalten.",
+      legal: "Impressum"
     }
   },
   en: {
+    lang: "en",
     htmlLang: "en-US",
-    title: "Jerry Vsan | Comedian from Cologne – Try Out Tour 2026",
+    dirLabel: "EN",
+    title: "Daphni Georgolidis | Dark Humor Comedy & Reels",
     description:
-      "Jerry Vsan is a comedian from Cologne: from rap to stand-up breakout. Try Out Tour 2026, clips, lineups and booking.",
-    ogTitle: "Jerry Vsan | Comedian from Cologne",
+      "Official site for Daphni Georgolidis: dark humor voice, live energy, reels, and booking contact.",
+    ogTitle: "Daphni Georgolidis | Stage, Reels, Dark Humor",
     ogDescription:
-      "Street energy, high-production punchlines: Tour 2026 (sold out), NightWash clip, press and booking.",
+      "Motion-led portfolio with featured reels, media grid, and booking section for promoters and media teams.",
     nav: {
       about: "About",
-      tour: "Tour",
-      features: "Lineups",
       media: "Media",
-      press: "Press",
       contact: "Contact",
       languageSwitch: "DE"
     },
     hero: {
-      kicker: "Comedian from Cologne",
-      headline: ["JERRY", "VSAN"],
+      kicker: "@daphnigg",
+      headlineA: "DARK",
+      headlineB: "HUMOR",
       intro:
-        "From rap to stand-up: Jerry brings street sound into a precise, high-production comedy show. Fast, sharp, controlled chaos.",
-      ctaTickets: "Tickets",
-      ctaTour: "See tour",
-      ctaWatch: "Watch",
-      videoLabel: "Show video",
-      videoHint: "Autoplay, muted"
+        "Daphni Georgolidis lands jokes exactly where people flinch: self-aware edge, fearless pacing, and zero soft exits.",
+      primaryCta: "Featured Reel",
+      secondaryCta: "Browse clips",
+      reelHint: "Built from locally extracted Instagram material"
     },
+    banners: [
+      "DARK HUMOR",
+      "LIVE",
+      "REELS",
+      "ON TOUR",
+      "UNFILTERED",
+      "CROWD WORK",
+      "SHARP",
+      "DAPHNI"
+    ],
     about: {
-      title: "Cologne in the bones. Global-stage confidence.",
-      body: [
-        "Jerry Vsan does stand-up at speed: tight observation, lean storytelling, clean hits.",
-        "He comes from music, but on stage timing is the instrument: pressure, pause, punchline.",
-        "The attitude is Cologne. The production is big. The vibe stays street."
-      ]
-    },
-    tour: {
-      title: "Try Out Tour 2026",
-      badge: "Nov 2026 · 5 cities · 10 shows",
-      intro:
-        "Berlin, Hamburg, Cologne, Frankfurt, Munich. Each stop a chapter, each show a different pulse.",
-      soldOut: "Sold out",
-      tickets: "Ticket shop"
-    },
-    features: {
-      title: "Lineups & Spots",
-      intro:
-        "Facts only: the rooms, shows and formats where he shows up, delivers, disappears.",
-      bullets: [
-        "NightWash: stand-up clip on YouTube (NightWash club).",
-        "Club and show lineups in Cologne and across Germany.",
-        "Awards/competitions: incl. Rebell’s Most Wanted (winner note from press-kit context)."
-      ]
+      title: "Fearless tone, cleaner timing.",
+      textA:
+        "Daphni's voice leans into risk: direct observations, dry confidence, and punchlines that hit before the room can brace.",
+      textB:
+        "Her public output signals a defined stage posture: quick setup, sharp payoff, and a playful but unapologetic edge.",
+      textC:
+        "This site translates that pulse into motion: kinetic type, slanted momentum, and controlled tension across every section."
     },
     media: {
-      title: "Media",
+      title: "Instagram Media",
       intro:
-        "One clip, a few frames, no excuses. If you feel it: tickets are gone (sorry), but booking is open.",
-      watchOnYouTube: "Watch on YouTube",
-      gridTitle: "Press photos (selection)"
-    },
-    press: {
-      title: "Press Lines",
-      intro: "Paraphrased for fairness. The names signal the direction.",
-      quotes: [
-        { who: "Felix Lobrecht", text: "One of the most solid newcomers right now. The vibe is there." },
-        { who: "Rebell Comedy", text: "A real candidate for the next wave of German stand-up." },
-        { who: "Filiz Tasdan", text: "Timing that sounds like instinct, not a lesson." }
-      ],
-      note: "Note: wording is paraphrased (no verbatim quotes)."
+        "Every card is rendered from the local extraction dataset. Captions are rewritten and never copied verbatim.",
+      filterAll: "All",
+      fallback:
+        "No local posts yet. Run `npm run fetch:instagram` with session/cookies to populate the grid.",
+      openInstagram: "Open on Instagram",
+      playClip: "Play clip",
+      reelFallback: "Open reel",
+      featured: "Featured Reel"
     },
     contact: {
-      title: "Contact",
+      title: "Booking & Contact",
       intro:
-        "Booking, press, collaborations. Tell us what you’re planning and when. The rest is timing.",
-      ctaMail: "Send email",
-      ctaBooking: "Booking request"
+        "For promoters, media teams, and partners. Legal notice details will be added separately.",
+      nameLabel: "Name",
+      emailLabel: "Email",
+      messageLabel: "Message",
+      submitLabel: "Send request",
+      legalPlaceholder: "Legal notice placeholder: details will be provided later."
     },
     footer: {
-      legal: "Legal",
-      rights: "All rights reserved."
+      rights: "All rights reserved.",
+      legal: "Legal"
     }
   }
 };
-
