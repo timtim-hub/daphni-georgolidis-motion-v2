@@ -36,11 +36,12 @@ npm run build
 
 ## Instagram Extraction (GitHub Tool)
 
-This project uses **yt-dlp** (GitHub: [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)) to extract public Instagram profile/post data.
+This project uses **Instaloader** (GitHub: [instaloader/instaloader](https://github.com/instaloader/instaloader)) to extract public Instagram profile/post data.
 
 The extraction script writes to:
 
-- `/Users/macbookpro13/Documents/New project/jerry-vsan-site/data/instagram.json`
+- `data/instagram.json`
+- `public/instagram/*` (downloaded posters + videos when available)
 
 Run:
 
@@ -48,20 +49,40 @@ Run:
 npm run fetch:instagram
 ```
 
+Prereqs:
+
+```bash
+pip install instaloader
+```
+
 Optional environment variables:
 
-- `IG_PROFILE_URL` (default: `https://www.instagram.com/daphnigg/`)
-- `IG_USERNAME` (default inferred from URL)
-- `IG_COOKIES_FILE` (Netscape cookie file, preferred)
-- `IG_SESSIONID` (fallback if no cookies file)
-- `IG_DS_USER_ID` (optional, helps with session auth)
-- `IG_PLAYLIST_END` (default `500`)
-- `YT_DLP_BIN` (custom yt-dlp binary path)
+- `IG_PROFILE` (default: `daphnigg`)
+- `IG_MAX_POSTS` (optional dev limit)
+- `IG_DOWNLOAD_VIDEOS=1` (optional: cache MP4s into `public/instagram/*` which can get large)
+- `IG_MAX_VIDEO_DOWNLOADS` (optional: cap number of MP4s cached locally; default `8` when `IG_DOWNLOAD_VIDEOS=1`, unlimited if set to a non-number)
+- `IG_USERNAME` + `IG_SESSIONFILE` (recommended for reliability)
+- `IG_USERNAME` + `IG_SESSION_BASE64` (CI/Netlify-friendly; writes a temporary `data/ig-session-*` file)
+- `IG_USERNAME` + `IG_PASSWORD` (works, but sessionfile is safer)
 
 Example:
 
 ```bash
-IG_COOKIES_FILE=/absolute/path/to/instagram-cookies.txt npm run fetch:instagram
+IG_PROFILE=daphnigg IG_MAX_POSTS=25 npm run fetch:instagram
+```
+
+Recommended auth (Instagram often blocks unauthenticated scrapes with 403):
+
+1. Create a session file once:
+
+```bash
+instaloader --login YOUR_IG_USERNAME --sessionfile ./data/ig-session-daphnigg
+```
+
+2. Then run:
+
+```bash
+IG_PROFILE=daphnigg IG_USERNAME=YOUR_IG_USERNAME IG_SESSIONFILE=./data/ig-session-daphnigg npm run fetch:instagram
 ```
 
 Notes:
@@ -69,6 +90,19 @@ Notes:
 - Instagram may require authenticated session cookies for reliable extraction.
 - No secrets are stored in this repository.
 - Captions are stored as source material (`captionSource`) but rendered site copy uses rewritten `rewritten.de` / `rewritten.en` text.
+- The session file is ignored via `.gitignore` (`data/ig-session-*`).
+
+CI/Netlify option:
+
+- Put the session file contents into a Netlify env var as base64:
+  - `IG_SESSION_BASE64` = `base64 -i ./data/ig-session-daphnigg`
+- Set `IG_USERNAME` and `IG_PROFILE` too.
+- Use build command: `npm run build:with-instagram`
+
+### Readability / Outlines
+
+Key typography uses a comic-style outline (`.comic-outline`) while staying within the strict 3-color palette
+(teal/yellow/white). A true black ink outline would require relaxing that palette rule.
 
 ## How Media Is Rendered
 

@@ -9,3 +9,9 @@ output
 
 # Local Netlify folder
 .netlify
+
+# Instagram auth session files (secrets)
+data/ig-session-*
+
+# Playwright CLI artifacts
+.playwright-cli

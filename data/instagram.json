@@ -1,20 +1,92 @@
 {
   "meta": {
-    "source": "yt-dlp (GitHub: yt-dlp/yt-dlp)",
+    "source": "instaloader (GitHub: instaloader/instaloader)",
     "profileUrl": "https://www.instagram.com/daphnigg/",
-    "fetchedAt": "",
-    "postCount": 0,
-    "note": "Run npm run fetch:instagram with IG_SESSIONID/IG_COOKIES_FILE to populate real posts."
+    "fetchedAt": "2026-02-17T10:24:47.657783Z",
+    "postCount": 3
   },
   "profile": {
     "username": "daphnigg",
-    "displayName": "Daphni Georgolidis",
-    "bio": "",
-    "followers": null,
-    "following": null,
-    "postCount": null,
-    "profileImage": null,
+    "displayName": "Daphni Georoglidis \ud83d\udd6f",
+    "bio": "\u2022 Stand up Comedienne\ud83c\udf99\n\u2022 Schauspielerin \nK\u00f6ln | Dark Humor \ud83d\udda4\nAnfragen \ud83d\udce9 DM",
+    "followers": 4014,
+    "following": 538,
+    "postCount": 73,
+    "profileImage": "https://scontent-fra5-2.cdninstagram.com/v/t51.2885-19/582078541_18539055277060641_5750671074684755573_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2QEpjECfmjLlN6Od8ibSJ7hR34G0XqlfD17KQT03SlkrziO19kfszEEVC6Uvf9tqGUPgt0woQAEmMUx-CTl58LrK&_nc_ohc=K-6UrZAKaA8Q7kNvwHRKyEn&_nc_gid=vr0ryiBFIDNtQ9ZYkqQNuw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AftapoHs5BCXg_XiimCmNyBfmsvmTUqBtALisYrF21jnOA&oe=699A16C2&_nc_sid=8b3546",
     "externalUrl": null
   },
-  "posts": []
+  "posts": [
+    {
+      "id": "DIgLOCAs7jJ",
+      "shortcode": "DIgLOCAs7jJ",
+      "type": "image",
+      "timestamp": "2025-04-16T09:39:35Z",
+      "captionSource": "\ud83e\udd0d\ud83e\udd8b\ud83e\udebd\ud83e\udd0d",
+      "permalink": "https://www.instagram.com/p/DIgLOCAs7jJ/",
+      "thumbnailUrl": "/instagram/DIgLOCAs7jJ-poster.webp",
+      "videoUrl": null,
+      "duration": null,
+      "stats": {
+        "likes": null,
+        "comments": 4,
+        "views": null
+      },
+      "rewritten": {
+        "de": "Post mit Fokus auf dunkle Alltagskanten: trocken, scharf und ohne Sicherheitsnetz.",
+        "en": "Post focused on dark everyday edges: dry, sharp, and without a safety rail."
+      },
+      "tags": [
+        "post",
+        "dark-humor"
+      ]
+    },
+    {
+      "id": "DUV0PqfjMcX",
+      "shortcode": "DUV0PqfjMcX",
+      "type": "reel",
+      "timestamp": "2026-02-04T15:25:33Z",
+      "captionSource": "#comedy \n\nSagt mir ich bin nicht die einzige \ud83d\ude2d",
+      "permalink": "https://www.instagram.com/p/DUV0PqfjMcX/",
+      "thumbnailUrl": "/instagram/DUV0PqfjMcX-poster.jpg",
+      "videoUrl": "https://scontent-fra3-1.cdninstagram.com/o1/v/t2/f2/m86/AQPJ89zb3GU-PtK9UhKy-c46mggUMYSgb9H46gXLTyJagNm59qyJ9UBHFn8b6R5HmLkdpqIwJxh67HMLruL46JXMTylJ7CK4j04vWqQ.mp4?_nc_cat=101&_nc_sid=5e9851&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_ohc=dkbtrYFnL2UQ7kNvwH_Ntd5&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTc4NTkwMTM3NjE1OTk0NjEsImFzc2V0X2FnZV9kYXlzIjoxMiwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjE4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=vr0ryiBFIDNtQ9ZYkqQNuw&_nc_zt=28&vs=9efd538a294d6e25&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9CNzQ4RUJENTc0RTM3OEQ5NEEwN0Y5NTVDRUI0MTNCN192aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyL0QwNEJGNjVGQUQ0NTVGRjU2QzY5MDlFRjU2NTMwRDg0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbKn-S0tau5PxUCKAJDMywXQDIIcrAgxJwYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA&oh=00_AfvPEqtZZwjssVyAArHMMYE7XuLSqWmNXFhwvFzHT5CfAA&oe=69963BFE",
+      "duration": null,
+      "stats": {
+        "likes": 208,
+        "comments": 34,
+        "views": 4787
+      },
+      "rewritten": {
+        "de": "Reel mit Fokus auf dunkle Alltagskanten: trocken, scharf und ohne Sicherheitsnetz.",
+        "en": "Reel focused on dark everyday edges: dry, sharp, and without a safety rail."
+      },
+      "tags": [
+        "reel",
+        "dark-humor"
+      ]
+    },
+    {
+      "id": "DUOIoE2jCgd",
+      "shortcode": "DUOIoE2jCgd",
+      "type": "reel",
+      "timestamp": "2026-02-01T15:50:10Z",
+      "captionSource": "#comedy\n\nMeine Zeit in der Psychiatrie\ud83d\ude4f",
+      "permalink": "https://www.instagram.com/p/DUOIoE2jCgd/",
+      "thumbnailUrl": "/instagram/DUOIoE2jCgd-poster.jpg",
+      "videoUrl": "https://scontent-fra5-2.cdninstagram.com/o1/v/t2/f2/m86/AQMjb-hUt5c2iK5wfxAdXR6HGAJGmslby_aWRLGIn677JaRofXY5c784ZyeEAoX0hkIlwYWJnhEMbrUs1QmPClzwz3XhZU3U1jbkheU.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-fra5-2.cdninstagram.com&_nc_ohc=IReAma3VLd8Q7kNvwEnZJBX&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTc4NTg2MDIyNzI1OTk0NjEsImFzc2V0X2FnZV9kYXlzIjoxNSwidmlfdXNlY2FzZV9pZCI6MTA4MjcsImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=vr0ryiBFIDNtQ9ZYkqQNuw&_nc_zt=28&vs=78bd76459ff1753e&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC80QzQ3QUI2NTRFNzYwQzlDQjIzN0MzNDY3OUNFOUE4OV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyLzI4NDA0RDE2QTc5RjhBQjgzOUU5Nzc4M0FFQzVFQjg0X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbKtqXKu5O5PxUCKAJDMywXQD6iDEm6XjUYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZZapAQA&oh=00_AfuQBNUquVJl3c8ALjU9H4Hsoo9pP88cff0a_hdvBjHAJg&oe=69961113",
+      "duration": null,
+      "stats": {
+        "likes": 305,
+        "comments": 61,
+        "views": 3281
+      },
+      "rewritten": {
+        "de": "Reel mit Fokus auf dunkle Alltagskanten: trocken, scharf und ohne Sicherheitsnetz.",
+        "en": "Reel focused on dark everyday edges: dry, sharp, and without a safety rail."
+      },
+      "tags": [
+        "reel",
+        "dark-humor"
+      ]
+    }
+  ]
 }

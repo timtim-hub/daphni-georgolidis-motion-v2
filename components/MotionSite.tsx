@@ -298,13 +298,19 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
 
             <ul className="hidden items-center gap-6 text-xs uppercase tracking-[0.2em] md:flex">
               <li>
-                <a href="#about">{copy.nav.about}</a>
+                <a href="#about" className="comic-outline comic-thin comic-stroke-teal text-yellow">
+                  {copy.nav.about}
+                </a>
               </li>
               <li>
-                <a href="#media">{copy.nav.media}</a>
+                <a href="#media" className="comic-outline comic-thin comic-stroke-teal text-yellow">
+                  {copy.nav.media}
+                </a>
               </li>
               <li>
-                <a href="#contact">{copy.nav.contact}</a>
+                <a href="#contact" className="comic-outline comic-thin comic-stroke-teal text-yellow">
+                  {copy.nav.contact}
+                </a>
               </li>
             </ul>
 
@@ -357,7 +363,7 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
                   <h1 className="font-display text-[18vw] uppercase leading-[0.74] tracking-[0.08em] md:text-[9vw]">
                     <motion.span
                       layoutId="headline-a"
-                      className="block text-teal comic-outline comic-fat comic-hollow comic-stroke-teal"
+                      className="block text-yellow comic-outline comic-fat comic-stroke-teal"
                     >
                       {copy.hero.headlineA}
                     </motion.span>
@@ -379,7 +385,12 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
                       onClick={() => setSelected(featuredReel)}
                       className="rounded-full border-2 border-teal bg-teal px-6 py-3 text-sm font-semibold uppercase tracking-[0.19em] text-white"
                     >
-                      <motion.span layoutId={`featured-${featuredReel.id}`}>{copy.hero.primaryCta}</motion.span>
+                      <motion.span
+                        layoutId={`featured-${featuredReel.id}`}
+                        className="comic-outline comic-thin comic-stroke-yellow"
+                      >
+                        {copy.hero.primaryCta}
+                      </motion.span>
                     </MagneticButton>
                   ) : null}
 

@@ -2,8 +2,9 @@ export type Locale = "de" | "en";
 
 export const siteUrl = "https://daphni-georgolidis-comedy.netlify.app";
 
-export const portraitUrl =
-  "https://imgproxy.filmmakers.eu/0TCR-cp50phRRZcZoVCniSvBjxkIsJkWSU6othubd20/rt:fit/w:3840/h:2160/czM6Ly9maWxtbWFr/ZXJzLWV1LXdlc3Qt/MS9wcm9kdWN0aW9u/LzIwOWUyODE5LWNjODUtNDhkOS05MTE1LTIyZTc1N2QyYjU0Zi5qcGc.avif";
+// Provided portrait source (mirrored locally to avoid hotlink 403s):
+// https://imgproxy.filmmakers.eu/0TCR-cp50phRRZcZoVCniSvBjxkIsJkWSU6othubd20/rt:fit/w:3840/h:2160/czM6Ly9maWxtbWFr/ZXJzLWV1LXdlc3Qt/MS9wcm9kdWN0aW9u/LzIwOWUyODE5LWNjODUtNDhkOS05MTE1LTIyZTc1N2QyYjU0Zi5qcGc.avif
+export const portraitUrl = "/portrait.avif";
 
 type LocaleCopy = {
   lang: Locale;
