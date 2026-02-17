@@ -5,6 +5,7 @@ node_modules
 coverage
 out
 dist
+output
 
 # Local Netlify folder
 .netlify

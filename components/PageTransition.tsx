@@ -34,7 +34,7 @@ export function PageTransition({ children }: Props) {
           }
           transition={{ duration: 0.85, ease: [0.19, 1, 0.22, 1] }}
         >
-          <div className="h-full w-full border-y-4 border-yellow bg-teal/40" />
+          <div className="h-full w-full border-y-4 border-yellow bg-teal opacity-40" />
         </motion.div>
         {children}
       </motion.div>

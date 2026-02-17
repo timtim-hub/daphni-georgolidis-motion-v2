@@ -36,16 +36,11 @@ function MarqueeRow({ words, direction, rotation, speed, outlined = false }: Row
         {repeated.map((word, index) => (
           <span
             key={`${word}-${index}`}
-            className="font-display text-3xl uppercase tracking-[0.24em] md:text-5xl"
-            style={
-              outlined
-                ? {
-                    color: "transparent",
-                    WebkitTextStrokeWidth: "2px",
-                    WebkitTextStrokeColor: "#19E6D4"
-                  }
-                : { color: "#19E6D4" }
-            }
+            className={[
+              "font-display text-3xl uppercase tracking-[0.24em] md:text-5xl",
+              "comic-outline comic-thin",
+              outlined ? "comic-hollow comic-stroke-teal" : "text-teal comic-stroke-yellow"
+            ].join(" ")}
           >
             {word}
           </span>

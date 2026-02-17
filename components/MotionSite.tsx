@@ -163,7 +163,7 @@ function MediaCard({
       />
 
       <button type="button" onClick={() => onSelect(post)} className="relative block w-full text-left">
-        <div className="relative aspect-[4/5] w-full border-b-2 border-teal bg-teal/10">
+        <div className="relative aspect-[4/5] w-full border-b-2 border-teal bg-white">
           {post.thumbnailUrl ? (
             <Image
               src={post.thumbnailUrl}
@@ -207,7 +207,7 @@ function MediaCard({
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.13em] text-teal/70">
+          <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.13em] text-teal">
             <span>{formatDate(post.timestamp, locale)}</span>
             <span>♥ {formatNumber(post.stats.likes)}</span>
             <span>▶ {formatNumber(post.stats.views)}</span>
@@ -279,17 +279,17 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
       <div className="relative min-h-screen overflow-x-hidden bg-white text-teal">
         <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
           <motion.div
-            className="absolute -left-24 top-20 h-64 w-64 rounded-full border-2 border-teal bg-yellow/45 blur-3xl"
+            className="absolute -left-24 top-20 h-64 w-64 rounded-full border-2 border-teal bg-yellow opacity-50 blur-3xl"
             style={reduceMotion ? undefined : { y: glowY }}
           />
           <motion.div
-            className="absolute -right-20 top-[45vh] h-72 w-72 rounded-full border-2 border-yellow bg-teal/30 blur-3xl"
+            className="absolute -right-20 top-[45vh] h-72 w-72 rounded-full border-2 border-yellow bg-teal opacity-30 blur-3xl"
             style={reduceMotion ? undefined : { y: reverseGlowY }}
           />
           <div className="absolute inset-0 bg-grid-lines opacity-35" />
         </div>
 
-        <header className="sticky top-0 z-50 border-b-2 border-teal bg-white/90 backdrop-blur">
+        <header className="sticky top-0 z-50 border-b-2 border-teal bg-white backdrop-blur">
           <motion.div className="h-1 origin-left bg-yellow" style={{ scaleX: progressScale }} />
           <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 md:px-8">
             <a href="#top" className="font-display text-2xl uppercase tracking-[0.24em] md:text-3xl">
@@ -355,12 +355,15 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
                   }
                 >
                   <h1 className="font-display text-[18vw] uppercase leading-[0.74] tracking-[0.08em] md:text-[9vw]">
-                    <motion.span layoutId="headline-a" className="block text-teal">
+                    <motion.span
+                      layoutId="headline-a"
+                      className="block text-teal comic-outline comic-fat comic-hollow comic-stroke-teal"
+                    >
                       {copy.hero.headlineA}
                     </motion.span>
                     <motion.span
                       layoutId="headline-b"
-                      className="inline-block border-y-4 border-teal bg-yellow px-3 text-teal"
+                      className="inline-block border-y-4 border-teal bg-white px-3 text-yellow comic-outline comic-fat comic-stroke-teal"
                     >
                       {copy.hero.headlineB}
                     </motion.span>
@@ -398,13 +401,13 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
                       viewport={{ once: true, amount: 0.9 }}
                       transition={{ duration: 0.4, delay: index * 0.08 }}
                     >
-                      <p className="text-[10px] uppercase tracking-[0.18em] text-teal/70">{item.label}</p>
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-teal">{item.label}</p>
                       <p className="mt-2 font-display text-2xl uppercase tracking-[0.08em]">{item.value}</p>
                     </motion.div>
                   ))}
                 </div>
 
-                <p className="text-xs uppercase tracking-[0.2em] text-teal/70">{copy.hero.reelHint}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-teal">{copy.hero.reelHint}</p>
               </motion.div>
 
               <motion.figure
@@ -454,7 +457,7 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
                 <figcaption className="grid gap-3 border-t-2 border-teal p-4 sm:grid-cols-[1fr_auto] sm:items-center">
                   <div>
                     <p className="font-display text-3xl uppercase tracking-[0.08em]">Daphni Georgolidis</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-teal/70">
+                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-teal">
                       {locale === "de" ? "Komikerin · @daphnigg" : "Comedian · @daphnigg"}
                     </p>
                   </div>
@@ -475,7 +478,7 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
 
           <section id="about" className="mx-auto w-full max-w-7xl px-5 py-20 md:px-8">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-              <h2 className="font-display text-5xl uppercase leading-[0.85] tracking-[0.08em] md:text-7xl lg:max-w-4xl">
+              <h2 className="font-display text-5xl uppercase leading-[0.85] tracking-[0.08em] md:text-7xl lg:max-w-4xl comic-outline comic-stroke-yellow">
                 {copy.about.title}
               </h2>
               <p className="border-2 border-teal bg-yellow px-3 py-2 text-[10px] uppercase tracking-[0.2em]">
@@ -508,10 +511,12 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
           <section id="media" className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
             <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <h2 className="font-display text-5xl uppercase tracking-[0.08em] md:text-7xl">{copy.media.title}</h2>
+                <h2 className="font-display text-5xl uppercase tracking-[0.08em] md:text-7xl comic-outline comic-stroke-yellow">
+                  {copy.media.title}
+                </h2>
                 <p className="mt-3 max-w-3xl leading-relaxed">{copy.media.intro}</p>
               </div>
-              <p className="border-2 border-teal bg-white px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-teal/70">
+              <p className="border-2 border-teal bg-white px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-teal">
                 {data.meta.fetchedAt ? new Date(data.meta.fetchedAt).toLocaleString() : locale === "de" ? "Noch kein Abruf" : "No fetch yet"}
               </p>
             </div>
@@ -606,7 +611,7 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
                       transition={{ delay: block * 0.08 }}
                     >
                       <motion.div
-                        className="absolute inset-y-0 left-0 w-24 bg-teal/20"
+                        className="absolute inset-y-0 left-0 w-24 bg-teal opacity-20"
                         animate={reduceMotion ? undefined : { x: [0, 180, 0] }}
                         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: block * 0.18 }}
                       />
@@ -717,19 +722,20 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
       <AnimatePresence>
         {selected ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-teal/90 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelected(null)}
           >
+            <div className="absolute inset-0 bg-teal opacity-95" />
             <motion.div
               layoutId={`post-${selected.id}`}
-              className="w-full max-w-5xl overflow-hidden border-2 border-yellow bg-white"
+              className="relative w-full max-w-5xl overflow-hidden border-2 border-yellow bg-white"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="grid gap-0 md:grid-cols-[1.2fr_0.8fr]">
-                <div className="relative aspect-video w-full border-b-2 border-teal bg-teal/10 md:border-b-0 md:border-r-2">
+                <div className="relative aspect-video w-full border-b-2 border-teal bg-white md:border-b-0 md:border-r-2">
                   {selected.videoUrl ? (
                     <video
                       controls
@@ -777,7 +783,7 @@ export function MotionSite({ locale, data, featuredReel, filterTags, socialLinks
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.13em] text-teal/70">
+                  <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.13em] text-teal">
                     <span>{formatDate(selected.timestamp, locale)}</span>
                     <span>♥ {formatNumber(selected.stats.likes)}</span>
                     <span>▶ {formatNumber(selected.stats.views)}</span>

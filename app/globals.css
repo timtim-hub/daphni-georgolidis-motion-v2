@@ -29,6 +29,46 @@ body {
   color: var(--teal);
 }
 
+/* Comic-like ink outline that stays within the 3-color palette (teal/yellow/white). */
+.comic-outline {
+  --comic-stroke: var(--teal);
+  --comic-stroke-w: 3px;
+  --comic-shadow: 1px;
+  -webkit-text-stroke: var(--comic-stroke-w) var(--comic-stroke);
+  paint-order: stroke fill;
+  text-shadow:
+    var(--comic-shadow) 0 0 var(--comic-stroke),
+    calc(var(--comic-shadow) * -1) 0 0 var(--comic-stroke),
+    0 var(--comic-shadow) 0 var(--comic-stroke),
+    0 calc(var(--comic-shadow) * -1) 0 var(--comic-stroke),
+    var(--comic-shadow) var(--comic-shadow) 0 var(--comic-stroke),
+    calc(var(--comic-shadow) * -1) var(--comic-shadow) 0 var(--comic-stroke),
+    var(--comic-shadow) calc(var(--comic-shadow) * -1) 0 var(--comic-stroke),
+    calc(var(--comic-shadow) * -1) calc(var(--comic-shadow) * -1) 0 var(--comic-stroke);
+}
+
+.comic-hollow {
+  color: transparent;
+}
+
+.comic-stroke-teal {
+  --comic-stroke: var(--teal);
+}
+
+.comic-stroke-yellow {
+  --comic-stroke: var(--yellow);
+}
+
+.comic-thin {
+  --comic-stroke-w: 2px;
+  --comic-shadow: 1px;
+}
+
+.comic-fat {
+  --comic-stroke-w: 4px;
+  --comic-shadow: 2px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
