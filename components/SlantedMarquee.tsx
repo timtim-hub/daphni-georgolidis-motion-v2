@@ -21,7 +21,7 @@ function MarqueeRow({ words, direction, rotation, speed, outlined = false }: Row
   const duration = Math.max(10, speed);
 
   return (
-    <div className="overflow-hidden border-y-2 border-charcoal bg-paper">
+    <div className="overflow-hidden border-y-2 border-teal bg-white">
       <motion.div
         className="flex min-w-max gap-6 py-4"
         style={{ rotate: reduceMotion ? 0 : rotation }}
@@ -39,7 +39,7 @@ function MarqueeRow({ words, direction, rotation, speed, outlined = false }: Row
             className={[
               "font-display text-3xl uppercase tracking-[0.24em] md:text-5xl",
               "comic-outline comic-thin",
-              outlined ? "comic-hollow comic-stroke-red" : "text-charcoal comic-stroke-lime"
+              outlined ? "comic-hollow comic-stroke-teal" : "text-teal comic-stroke-yellow"
             ].join(" ")}
           >
             {word}
@@ -55,10 +55,7 @@ type SlantedMarqueeProps = {
 };
 
 export function SlantedMarquee({ rows }: SlantedMarqueeProps) {
-  const safeRows =
-    rows.length > 0
-      ? rows
-      : [["JERRY VSAN", "COMEDIAN AUS KOLN", "TRY OUT TOUR 2026", "NIGHTWASH LIVE"]];
+  const safeRows = rows.length > 0 ? rows : [["DAPHNI", "LIVE", "REELS", "DARK HUMOR"]];
 
   return (
     <section aria-label="Marquee" className="relative z-20 -mt-3 space-y-2 pb-6">

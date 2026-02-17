@@ -15,15 +15,15 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0F0F12",
-          border: "4px solid #FF2E2E",
-          color: "#D9D9D9",
+          background: "#FFFFFF",
+          border: "4px solid #19E6D4",
+          color: "#19E6D4",
           fontSize: 34,
           fontWeight: 900,
           letterSpacing: 2
         }}
       >
-        JV
+        DG
       </div>
     ),
     {

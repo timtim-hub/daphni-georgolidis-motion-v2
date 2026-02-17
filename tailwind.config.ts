@@ -9,12 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        red: "#FF2E2E",
-        charcoal: "#0F0F12",
-        lime: "#B4FF00",
-        silver: "#D9D9D9",
-        cyan: "#00F0FF",
-        paper: "#FFFFFF"
+        teal: "#19E6D4",
+        yellow: "#FFE84D",
+        white: "#FFFFFF"
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],

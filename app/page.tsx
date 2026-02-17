@@ -1,6 +1,7 @@
-import { JerryMotionSite } from "@/components/JerryMotionSite";
+import { MotionSite } from "@/components/MotionSite";
+import { getFilterTags, getFeaturedReel, getInstagramData, getSocialLinks } from "@/lib/instagram";
 import { copyByLocale, siteUrl } from "@/lib/i18n";
-import { getPersonSchema, getTourEventGraph, getWebsiteSchema } from "@/lib/schema";
+import { getPersonSchema, getWebsiteSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 
 const copy = copyByLocale.de;
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
       en: "/en"
     }
   },
-  keywords: ["Jerry Vsan", "Comedian aus Köln", "Stand-up", "Try Out Tour 2026", "NightWash"],
+  keywords: ["Daphni Georgolidis", "Dark Humor", "Comedy", "Instagram Reels"],
   openGraph: {
     title: copy.ogTitle,
     description: copy.ogDescription,
@@ -32,6 +33,11 @@ export const metadata: Metadata = {
 };
 
 export default function GermanPage() {
+  const data = getInstagramData();
+  const featuredReel = getFeaturedReel();
+  const filterTags = getFilterTags();
+  const socialLinks = getSocialLinks();
+
   return (
     <>
       <script
@@ -42,11 +48,13 @@ export default function GermanPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebsiteSchema("de")) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getTourEventGraph()) }}
+      <MotionSite
+        locale="de"
+        data={data}
+        featuredReel={featuredReel}
+        filterTags={filterTags}
+        socialLinks={socialLinks}
       />
-      <JerryMotionSite locale="de" />
     </>
   );
 }
