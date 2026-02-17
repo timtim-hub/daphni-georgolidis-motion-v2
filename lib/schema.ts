@@ -1,73 +1,40 @@
-import { legalAddress, siteBaseUrl, tourDates, type Locale } from "@/lib/site-data";
+import { getInstagramData } from "@/lib/instagram";
+import { copyByLocale, siteUrl, type Locale } from "@/lib/i18n";
 
 const localePath = (locale: Locale) => (locale === "de" ? "" : "/en");
 
 export const getPersonSchema = (locale: Locale) => {
-  const inLanguage = locale === "de" ? "de-DE" : "en-US";
+  const copy = copyByLocale[locale];
+  const data = getInstagramData();
 
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Jerry Vsan",
-    jobTitle: locale === "de" ? "Comedian aus Köln" : "Comedian from Cologne",
-    description:
-      locale === "de"
-        ? "Stand-up Comedian aus Köln mit ausverkaufter Try Out Tour 2026."
-        : "Stand-up comedian from Cologne with a sold-out Try Out Tour 2026.",
-    url: `${siteBaseUrl}${localePath(locale) || "/"}`,
-    knowsLanguage: [inLanguage, "de-DE", "en-US"],
-    homeLocation: {
-      "@type": "Place",
-      name: "Köln"
-    },
-    address: {
-      "@type": "PostalAddress",
-      name: legalAddress.name,
-      streetAddress: `${legalAddress.careOf}, ${legalAddress.street}`,
-      postalCode: "35410",
-      addressLocality: "Hungen",
-      addressCountry: "DE"
-    },
-    sameAs: [
-      "https://www.instagram.com/Jerryvsan/",
-      "https://www.tiktok.com/@jerryvsan",
-      "https://www.youtube.com/channel/UCS78eYkuXFeg9ai3hdfLTcA",
-      "https://open.spotify.com/artist/24U2CZi9ZLpHnn3IxKCqoG",
-      "https://onlyfans.com/jerryvsan"
-    ]
+    name: "Daphni Georgolidis",
+    alternateName: data.profile.username ? `@${data.profile.username}` : undefined,
+    jobTitle: locale === "de" ? "Comedian" : "Comedian",
+    description: copy.description,
+    url: `${siteUrl}${localePath(locale) || "/"}`,
+    sameAs: [`https://www.instagram.com/${data.profile.username}/`],
+    interactionStatistic:
+      typeof data.profile.followers === "number"
+        ? {
+            "@type": "InteractionCounter",
+            interactionType: "https://schema.org/FollowAction",
+            userInteractionCount: data.profile.followers
+          }
+        : undefined
   };
 };
 
-export const getEventSchema = () =>
-  tourDates.map((event) => ({
-    "@type": "Event",
-    name: `Jerry Vsan Try Out Tour 2026 - ${event.city}`,
-    startDate: event.isoDate,
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: event.soldOut
-      ? "https://schema.org/EventSoldOut"
-      : "https://schema.org/EventScheduled",
-    image: [`${siteBaseUrl}/og-image.svg`],
-    location: {
-      "@type": "Place",
-      name: event.venue,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: event.city,
-        addressCountry: "DE"
-      }
-    },
-    performer: {
-      "@type": "Person",
-      name: "Jerry Vsan"
-    },
-    offers: {
-      "@type": "Offer",
-      url: event.ticketUrl,
-      availability: event.soldOut
-        ? "https://schema.org/SoldOut"
-        : "https://schema.org/InStock",
-      price: "29.00",
-      priceCurrency: "EUR"
-    }
-  }));
+export const getWebsiteSchema = (locale: Locale) => {
+  const copy = copyByLocale[locale];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: copy.title,
+    url: `${siteUrl}${localePath(locale) || "/"}`,
+    inLanguage: copy.htmlLang
+  };
+};

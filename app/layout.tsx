@@ -1,20 +1,27 @@
+import { PageTransition } from "@/components/PageTransition";
+import { siteUrl } from "@/lib/i18n";
 import type { Metadata } from "next";
 import "./globals.css";
-import { PageTransition } from "@/components/PageTransition";
-import { siteBaseUrl } from "@/lib/site-data";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteBaseUrl),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Jerry Vsan",
-    template: "%s | Jerry Vsan"
+    default: "Daphni Georgolidis",
+    template: "%s | Daphni Georgolidis"
   },
   description:
-    "Jerry Vsan: Comedian aus Köln, ausverkaufte Try Out Tour 2026, aktuelle Termine, Media und Booking.",
+    "Official website for comedian Daphni Georgolidis with dark humor voice, reels, and booking contact.",
   openGraph: {
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "Jerry Vsan" }],
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Daphni Georgolidis"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
@@ -24,8 +31,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="de">
-      <body className="min-h-screen bg-charcoal font-body text-chrome">
+    <html lang="de" suppressHydrationWarning>
+      <body className="bg-white font-body text-teal antialiased">
         <PageTransition>{children}</PageTransition>
       </body>
     </html>

@@ -1,31 +1,31 @@
+import { siteUrl } from "@/lib/i18n";
 import type { MetadataRoute } from "next";
-import { siteBaseUrl } from "@/lib/site-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${siteBaseUrl}/`,
+      url: `${siteUrl}/`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1
     },
     {
-      url: `${siteBaseUrl}/en`,
+      url: `${siteUrl}/en`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1
     },
     {
-      url: `${siteBaseUrl}/impressum`,
+      url: `${siteUrl}/impressum`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.6
+      priority: 0.5
     },
     {
-      url: `${siteBaseUrl}/en/legal`,
+      url: `${siteUrl}/en/legal`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.6
+      priority: 0.5
     }
   ];
 }

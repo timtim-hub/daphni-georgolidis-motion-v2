@@ -1,15 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Jerry Vsan - Comedian Köln</title>
-  <desc id="desc">Animated comedy showcase identity card.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#0F0F12" />
-      <stop offset="1" stop-color="#1B1B21" />
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <circle cx="160" cy="110" r="120" fill="#00F0FF" opacity="0.15" />
-  <circle cx="1040" cy="520" r="170" fill="#B4FF00" opacity="0.13" />
-  <text x="90" y="255" fill="#FF2E2E" font-size="132" font-family="Arial Black, Impact, sans-serif" letter-spacing="12">JERRY VSAN</text>
-  <text x="96" y="340" fill="#D9D9D9" font-size="36" font-family="Arial, sans-serif" letter-spacing="5">COMEDIAN KÖLN • TRY OUT TOUR 2026</text>
+  <title id="title">Daphni Georgolidis</title>
+  <desc id="desc">Dark humor motion-led website preview.</desc>
+  <rect width="1200" height="630" fill="#FFFFFF" />
+  <rect x="36" y="36" width="1128" height="558" fill="none" stroke="#19E6D4" stroke-width="6" />
+  <rect x="84" y="86" width="1032" height="458" fill="#19E6D4" />
+  <text x="130" y="265" fill="#FFFFFF" font-size="126" font-family="Syne, Arial Black, sans-serif" letter-spacing="8">DAPHNI</text>
+  <text x="130" y="370" fill="#FFE84D" font-size="126" font-family="Syne, Arial Black, sans-serif" letter-spacing="8">GEORGOLIDIS</text>
+  <text x="130" y="455" fill="#FFFFFF" font-size="34" font-family="Manrope, Arial, sans-serif" letter-spacing="5">DARK HUMOR • LIVE • REELS</text>
 </svg>

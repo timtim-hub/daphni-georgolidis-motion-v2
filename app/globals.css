@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  --teal: #19e6d4;
+  --yellow: #ffe84d;
+  --white: #ffffff;
+  --font-display: "Arial Black", "Impact", "Haettenschweiler", "Franklin Gothic Heavy", sans-serif;
+  --font-body: "Trebuchet MS", "Arial Narrow", "Avenir Next Condensed", sans-serif;
 }
 
 * {
@@ -14,119 +18,50 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #0f0f12;
-  color: #d9d9d9;
-  text-rendering: geometricPrecision;
+  background: var(--white);
+  color: var(--teal);
 }
 
-.section-shell {
-  @apply mx-auto w-full max-w-7xl px-5 py-14 md:px-8 md:py-20;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.section-card {
-  @apply rounded-[2rem] border border-chrome/20 bg-charcoal/80 p-7 md:p-10;
+input,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
 }
 
-.section-heading {
-  @apply font-display text-5xl uppercase leading-none tracking-[0.08em] text-chrome md:text-7xl;
+input:focus,
+textarea:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
 }
 
-.hero-type {
-  font-family: "Arial Black", "Impact", "Haettenschweiler", "Arial Narrow", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: #f1f1f1;
-  text-shadow: 0 0 20px rgba(15, 15, 18, 0.9);
+.bg-grid-lines {
+  background-image: linear-gradient(to right, var(--teal) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--teal) 1px, transparent 1px);
+  background-size: 44px 44px;
 }
 
-.hero-ghost {
-  position: absolute;
-  left: 0.02em;
-  top: 0.05em;
-  z-index: -1;
-  font-family: "Arial Black", "Impact", "Haettenschweiler", "Arial Narrow", sans-serif;
-  font-size: clamp(5rem, 22vw, 22rem);
-  line-height: 0.82;
-  letter-spacing: 0.09em;
-  color: rgba(255, 46, 46, 0.32);
-  mix-blend-mode: screen;
-  filter: blur(0.7px);
-}
-
-.cta-primary,
-.cta-secondary,
-.cta-ghost,
-.cta-joke {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.19em] transition duration-300;
-}
-
-.cta-primary {
-  @apply border border-electric bg-electric text-charcoal hover:-translate-y-0.5 hover:scale-[1.01];
-}
-
-.cta-secondary {
-  @apply border border-chrome/45 bg-black/35 text-chrome hover:-translate-y-0.5 hover:border-electric hover:text-electric;
-}
-
-.cta-ghost {
-  @apply border border-chrome/35 text-chrome/90 hover:-translate-y-0.5 hover:border-chrome hover:bg-black/30;
-}
-
-.cta-joke {
-  @apply border border-chrome/45 bg-white text-charcoal hover:-translate-y-0.5 hover:bg-chrome;
-}
-
-.white-tape {
-  @apply -ml-[5vw] flex w-[185vw] gap-6 overflow-hidden border-y-2 border-charcoal bg-white px-5 py-3 text-charcoal;
-  transform: rotate(-2deg);
-  will-change: transform;
-}
-
-.white-tape-item {
-  @apply inline-flex min-w-max items-center font-display text-2xl uppercase tracking-[0.08em] md:text-4xl;
-}
-
-.timeline-wrap {
-  @apply flex gap-4 overflow-x-auto rounded-3xl border border-chrome/20 bg-black/30 p-4 md:gap-6 md:p-6;
-  scroll-snap-type: x mandatory;
-}
-
-.timeline-card {
-  @apply min-w-[18rem] snap-start rounded-2xl border border-chrome/20 bg-charcoal/80 p-5 md:min-w-[21rem];
-}
-
-.sold-out {
-  @apply rounded-full border border-electric/65 bg-electric/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.17em] text-electric;
-  box-shadow: 0 0 16px rgba(255, 46, 46, 0.25);
-}
-
-.social-card {
-  @apply relative overflow-hidden rounded-2xl border border-chrome/25 px-5 py-4;
-}
-
-.social-icon {
-  @apply mb-3 h-5 w-5 opacity-95;
-}
-
-.social-watermark {
-  @apply pointer-events-none absolute -bottom-2 right-2 h-16 w-16 opacity-20;
-}
-
-.micro-link {
-  @apply text-chrome transition duration-200 hover:text-electric;
-}
-
-.micro-link:hover {
-  text-shadow: none;
+::selection {
+  background: var(--yellow);
+  color: var(--teal);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html,
-  body {
+  html {
     scroll-behavior: auto;
   }
 
@@ -136,11 +71,5 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-  }
-
-  .white-tape {
-    transform: rotate(0deg);
-    width: 100%;
-    margin-left: 0;
   }
 }

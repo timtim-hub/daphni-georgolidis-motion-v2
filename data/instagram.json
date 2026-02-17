@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "source": "yt-dlp (GitHub: yt-dlp/yt-dlp)",
+    "profileUrl": "https://www.instagram.com/daphnigg/",
+    "fetchedAt": "",
+    "postCount": 0,
+    "note": "Run npm run fetch:instagram with IG_SESSIONID/IG_COOKIES_FILE to populate real posts."
+  },
+  "profile": {
+    "username": "daphnigg",
+    "displayName": "Daphni Georgolidis",
+    "bio": "",
+    "followers": null,
+    "following": null,
+    "postCount": null,
+    "profileImage": null,
+    "externalUrl": null
+  },
+  "posts": []
+}

@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { MotionSite } from "@/components/MotionSite";
-import { copyByLocale, siteBaseUrl } from "@/lib/site-data";
-import { getEventSchema, getPersonSchema } from "@/lib/schema";
+import { getFilterTags, getFeaturedReel, getInstagramData, getSocialLinks } from "@/lib/instagram";
+import { copyByLocale, siteUrl } from "@/lib/i18n";
+import { getPersonSchema, getWebsiteSchema } from "@/lib/schema";
+import type { Metadata } from "next";
 
 const copy = copyByLocale.de;
 
 export const metadata: Metadata = {
   title: copy.title,
   description: copy.description,
-  keywords: ["Comedian aus Köln", "Jerry Vsan", "Stand-up aus Köln", "Try Out Tour 2026"],
   alternates: {
     canonical: "/",
     languages: {
@@ -16,36 +16,45 @@ export const metadata: Metadata = {
       en: "/en"
     }
   },
+  keywords: ["Daphni Georgolidis", "Dark Humor", "Comedy", "Instagram Reels"],
   openGraph: {
-    title: copy.title,
-    description: copy.description,
-    url: siteBaseUrl,
+    title: copy.ogTitle,
+    description: copy.ogDescription,
+    url: siteUrl,
     locale: "de_DE",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "Jerry Vsan - Comedian aus Köln" }]
+    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: copy.ogTitle }]
   },
   twitter: {
     card: "summary_large_image",
-    title: copy.title,
-    description: copy.description,
+    title: copy.ogTitle,
+    description: copy.ogDescription,
     images: ["/og-image.svg"]
   }
 };
 
-export default function GermanHomePage() {
-  const personSchema = getPersonSchema("de");
-  const eventSchema = { "@context": "https://schema.org", "@graph": getEventSchema() };
+export default function GermanPage() {
+  const data = getInstagramData();
+  const featuredReel = getFeaturedReel();
+  const filterTags = getFilterTags();
+  const socialLinks = getSocialLinks();
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getPersonSchema("de")) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebsiteSchema("de")) }}
       />
-      <MotionSite locale="de" />
+      <MotionSite
+        locale="de"
+        data={data}
+        featuredReel={featuredReel}
+        filterTags={filterTags}
+        socialLinks={socialLinks}
+      />
     </>
   );
 }
